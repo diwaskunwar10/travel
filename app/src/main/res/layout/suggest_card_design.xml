@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="450dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="2dp"
+    android:layout_margin="28dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/suggest_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/backg"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:layout_margin="20dp"
+            android:id="@+id/suggest_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="Nature"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_margin="10dp"
+            android:id="@+id/suggest_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello wordasdadasdasdasdasdasddddddddddddddddddddddddddddddasd
+" />
+
+        <TextView
+            android:layout_margin="10dp"
+            android:id="@+id/suggest_dist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="Nature"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+        <Button
+            android:id="@+id/openMapButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Open in Maps"
+            android:layout_below="@id/suggest_desc"
+            android:layout_marginTop="8dp"
+            android:layout_alignParentEnd="true"
+            android:onClick="openMapsForPlace" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
