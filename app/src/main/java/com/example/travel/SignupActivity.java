@@ -40,16 +40,25 @@ public class SignupActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_signup);
 
 		// Initialize your UI elements
-		editTextName = findViewById(R.id.username);
+
 		editTextEmail = findViewById(R.id.email);
 		editTextPassword = findViewById(R.id.password);
 		editTextConfirmPassword = findViewById(R.id.Cpassword);
 		buttonSignUp = findViewById(R.id.signup);
-		TextView loginTextView = findViewById(R.id.loginRedirec); // Replace with your TextView ID
+		TextView sinupTextView = findViewById(R.id.Adminsinup);
+		TextView loginTextView = findViewById(R.id.loginRedirec);
+		// Replace with your TextView ID
 		loginTextView.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(SignupActivity.this, LoginActivity.class); // Replace CurrentActivity with your activity name
+				startActivity(intent);
+			}
+		});
+		sinupTextView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(SignupActivity.this, adminsinup.class); // Replace CurrentActivity with your activity name
 				startActivity(intent);
 			}
 		});
@@ -82,7 +91,8 @@ public class SignupActivity extends AppCompatActivity {
 	}
 
 	private void performRegistration(final String name, final String email, final String password) {
-		String url = "http://192.168.1.67/travel/sinup.php"; // Replace with your PHP script URL
+		String url = urls.BASE_PHP+urls.GET_SIGNUP;
+
 
 		StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
 				new Response.Listener<String>() {

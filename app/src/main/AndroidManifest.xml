@@ -19,19 +19,49 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="34">
         <activity
-            android:name=".displayui"
+            android:name=".adminsinup"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Admin"
+            android:exported="false" />
+        <activity
+            android:name=".admin_upload"
+            android:exported="false" />
+        <activity
+            android:name=".Btnsearch"
+            android:exported="false" />
+        <activity
+            android:name=".lake"
+            android:exported="false" />
+        <activity
+            android:name=".otpactivity"
+            android:exported="false" />
+        <activity
+            android:name=".resetpwfinal"
+            android:exported="false" />
+        <activity
+            android:name=".resetpw"
+            android:exported="false" />
+        <activity
+            android:name=".natural"
+            android:exported="false" />
+        <activity
+            android:name=".Temple"
             android:exported="false" />
         <activity
             android:name=".SignupActivity"
             android:exported="false" />
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Extra"
+            android:exported="false" />
+        <activity
             android:name=".display"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

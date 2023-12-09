@@ -7,49 +7,31 @@
     tools:ignore="HardcodedText">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:textStyle="bold"
-        android:textSize="40sp"
-        android:textColor="@color/darkPurple"
-        android:paddingStart="20dp"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginTop="30dp">
-        <EditText
-            android:layout_width="300dp"
-            android:layout_height="55dp"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="20dp"
-            android:hint="Username"
-            android:id="@+id/username"
-            android:background="@color/lightPurple"
-            android:textStyle="bold"
-            android:translationZ="1dp"
-            android:outlineProvider="none"
-            android:inputType="text"
-            android:textColorHint="@color/textHintColor"/>
+        android:layout_height="150dp"></RelativeLayout>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:src="@drawable/input_box" />
-    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingStart="20dp"
+        android:text="Sign Up"
+        android:textAlignment="center"
+        android:textColor="@color/darkPurple"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:id="@+id/signuptext"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_marginTop="30dp">
+        >
         <EditText
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_centerInParent="true"
             android:layout_marginTop="20dp"
             android:hint="Email"
+         android:layout_marginVertical="100px"
             android:id="@+id/email"
             android:background="@color/lightPurple"
             android:textStyle="bold"
@@ -141,4 +123,14 @@
             android:gravity="center"
             android:textColor="@color/darkPurple"/>
     </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Admin Signup"
+        android:id="@+id/Adminsinup"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="@color/darkPurple"/>
 </LinearLayout>

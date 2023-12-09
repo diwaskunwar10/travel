@@ -5,16 +5,9 @@
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="HardcodedText">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="200dp">
-
-
-
-
-        <!-- CircleImageView centered in parent -->
-
     </RelativeLayout>
 
     <TextView
@@ -123,28 +116,26 @@
             android:clickable="true"
             android:onClick="redirectToSignUp" />
 
+
     </LinearLayout>
     <TextView
-        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:id="@+id/loginasAdmin"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Or Sign up With"
+        android:text="Admin"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:gravity="center"
-        android:textSize="12sp"
-        android:layout_marginTop="15dp"/>
+        android:textColor="@color/darkPurple"
+        android:clickable="true"
+        android:onClick="loginasAdmin" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_horizontal"
-        android:layout_marginTop="15dp">
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/google_logo"
-            android:layout_marginEnd="20dp"/>
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/facebook_logo"/>
-    </LinearLayout>
+        android:layout_marginTop="15dp"/>
 </LinearLayout>

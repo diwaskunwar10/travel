@@ -11,16 +11,21 @@
         android:layout_height="wrap_content"
         android:id="@+id/app_nav">
         <ImageView
+            android:id="@+id/redirectToAbout"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:src="@drawable/baseline_menu_24"
-            android:contentDescription="TODO" />
+            android:contentDescription="TODO"
+            />
         <ImageView
+            android:id="@+id/logout"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
+            android:onClick="loginpage"
             android:layout_centerVertical="true"
+
             android:src="@drawable/baseline_arrow_back_24"/>
 
     </RelativeLayout>
@@ -33,38 +38,28 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Get Away"
+            android:text="Travel Sathi"
             android:textSize="24sp"
 
             android:layout_centerHorizontal="true"
             ></TextView>
 
     </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@id/app_name"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/white"
-        android:elevation="8dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Search...."
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"/>
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/baseline_search_24"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="15dp"></ImageView>
 
-    </RelativeLayout>
+ 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="150px"
+    android:orientation="horizontal">
+    <androidx.appcompat.widget.SearchView
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:id="@+id/searchView"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
 
 
     <LinearLayout
@@ -88,37 +83,40 @@
                     android:layout_width="48dp"
                     android:layout_height="58dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/baseline_temple_hindu_24"
-                    android:contentDescription="Button for Suggest"
                     android:clickable="true"
+                    android:contentDescription="Button for Suggest"
                     android:focusable="true"
-                    android:onClick="onImageButtonClick">
-                </ImageView>
+                    android:onClick="onImageButtonClick"
+                    android:src="@drawable/baseline_play_arrow_24"></ImageView>
 
 
             </RelativeLayout>
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Temple"
+    android:text="Suggest"
     android:textAlignment="center"
     />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:onClick="onTempleClick">
             <RelativeLayout
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="@color/lavender"
                 android:elevation="8dp"
                 android:layout_margin="10dp">
+
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/baseline_temple_hindu_24"
-                    android:layout_centerInParent="true">
+                    android:id="@+id/temples"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/baseline_temple_hindu_24">
 
                 </ImageView>
             </RelativeLayout>
@@ -132,51 +130,56 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:onClick="onNatureClick">
             <RelativeLayout
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="@color/lavender"
                 android:elevation="8dp"
                 android:layout_margin="10dp">
+
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/baseline_temple_hindu_24"
-                    android:layout_centerInParent="true">
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/baseline_directions_walk_24">
 
                 </ImageView>
             </RelativeLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Temple"
+                android:text="Natural"
                 android:textAlignment="center"
                 />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:onClick="onlakeClick">
             <RelativeLayout
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="@color/lavender"
                 android:elevation="8dp"
                 android:layout_margin="10dp">
+
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/baseline_temple_hindu_24"
-                    android:layout_centerInParent="true">
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/baseline_water_24">
 
                 </ImageView>
             </RelativeLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Temple"
+                android:text="lake"
                 android:textAlignment="center"
+
                 />
         </LinearLayout>
 
@@ -213,7 +216,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="20dp"
     android:layout_marginLeft="20dp"
-    android:background="@color/design_default_color_primary_variant">
+    android:background="@color/white">
 
     <LinearLayout
         android:id="@+id/featured_list"

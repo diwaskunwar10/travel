@@ -1,24 +1,20 @@
 package com.example.travel;
-
+import android.os.Bundle;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.travel.DisplayAdapter;
+import com.example.travel.Suggest.DisplayAdapter;
 import com.example.travel.R;
-import com.example.travel.datamodel;
-
+import com.example.travel.Suggest.datamodel;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -67,6 +63,7 @@ public class display extends AppCompatActivity {
             public void run() {
                 try {
                     URL url = new URL("http://192.168.1.67/travel/get_info.php?name=" + nameToSearch);
+
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("GET");
 
@@ -86,7 +83,7 @@ public class display extends AppCompatActivity {
                             String name = jsonObject.getString("Name");
                             String imageUrl = jsonObject.optString("image");
                             String description = jsonObject.optString("description");
-                            String baseLocalhostUrl = "http://172.19.96.1/travel/images/"  ; // Replace ipAddress with your machine's local IP address
+                            String baseLocalhostUrl = "http://192.168.1.67/travel/images/"  ; // Replace ipAddress with your machine's local IP address
                             String finaleimageUrl = baseLocalhostUrl + imageUrl;
 
                             datamodel placeData = new datamodel(finaleimageUrl, name, description, distance);

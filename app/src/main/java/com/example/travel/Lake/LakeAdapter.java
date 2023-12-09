@@ -1,4 +1,4 @@
-package com.example.travel;
+package com.example.travel.Lake;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,28 +15,28 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.travel.R;
 
 import java.util.ArrayList;
-public class DisplayAdapter extends RecyclerView.Adapter<DisplayAdapter.ViewHolder> {
+public class LakeAdapter extends RecyclerView.Adapter<LakeAdapter.ViewHolder> {
 
-    private ArrayList<datamodel> dataList; // Replace datamodel with your data model class
+    private ArrayList<lakemodel> lakedataList; // Replace datamodel with your data model class
     private Context context;
-
-    public DisplayAdapter(ArrayList<datamodel> dataList, Context context) {
-        this.dataList = dataList;
+    private String type;
+    public LakeAdapter(ArrayList<lakemodel> lakedataList, Context context, String lake) {
+        this.lakedataList = lakedataList;
         this.context = context;
+        this.type="lake";
     }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.suggest_card_design, parent, false);
         return new ViewHolder(view);
     }
-
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        datamodel currentItem = dataList.get(position);
+        lakemodel currentItem = lakedataList.get(position);
 
         // Set data to views
         Glide.with(context)
@@ -44,41 +44,34 @@ public class DisplayAdapter extends RecyclerView.Adapter<DisplayAdapter.ViewHold
                 .into(holder.imagedisplay);
         holder.namedisplay.setText(currentItem.getName());
         holder.descdisplay.setText(currentItem.getDescription());
-        holder.distdisplay.setText(currentItem.getDistance());
 
         holder.mapButton.setOnClickListener(view -> {
             String placeName = currentItem.getName();
             openGoogleMaps(placeName, view.getContext());
             Toast.makeText(view.getContext(), "Opening Maps for " + placeName, Toast.LENGTH_SHORT).show();
-
         });
     }
-
     @Override
     public int getItemCount() {
-        return dataList.size();
+        return lakedataList.size();
     }
-
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imagedisplay;
         Button mapButton;
-        TextView namedisplay, descdisplay, distdisplay;
-
+        TextView namedisplay, descdisplay;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imagedisplay = itemView.findViewById(R.id.suggest_image);
             namedisplay = itemView.findViewById(R.id.suggest_title);
             descdisplay = itemView.findViewById(R.id.suggest_desc);
-            distdisplay = itemView.findViewById(R.id.suggest_dist);
+
             mapButton = itemView.findViewById(R.id.openMapButton);
         }
     }
-
     private void openGoogleMaps(String placeName, Context context) {
         Intent intent = new Intent(Intent.ACTION_VIEW,
                 Uri.parse("geo:0,0?q=" + Uri.encode(placeName)));
         intent.setPackage("com.google.android.apps.maps");
-
         if (intent.resolveActivity(context.getPackageManager()) != null) {
             context.startActivity(intent);
         } else {

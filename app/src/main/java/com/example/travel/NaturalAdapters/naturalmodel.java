@@ -1,16 +1,18 @@
-package com.example.travel;
+package com.example.travel.NaturalAdapters;
 
-public class datamodel {
+public class naturalmodel {
     private String imageUrl;
     private String name;
     private String description;
     private String distance;
+    private String type;
 
-    public datamodel(String imageUrl, String name, String description, String distance) {
+    public naturalmodel(String imageUrl, String name, String description, String distance) {
         this.imageUrl = imageUrl; ;
         this.name = name;
         this.description = description;
         this.distance = distance;
+        this.type = "Natural";
     }
 
     public String getImageUrl() {
@@ -25,7 +27,5 @@ public class datamodel {
         return description;
     }
 
-    public String getDistance() {
-        return distance;
-    }
+
 }
